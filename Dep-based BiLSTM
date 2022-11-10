@@ -1,0 +1,3 @@
+# Dependency path basd BiLSTM for ECI
+Reproducing this paper: https://aclanthology.org/P17-2001.pdf
+Novel idea: change the word2vec embeddings to Bert embeddings
