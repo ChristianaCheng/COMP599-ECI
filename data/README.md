@@ -4,8 +4,7 @@
 The original corpus is structured in folders; each folder corresponds to a topic from the ECB corpus. The file is in XML-labeled annotation format. Therefore, we need to use lxml to read the corpus.  
 
 Annotation Information from the corpus:  
-
-<token>:   
+1)<token>:   
 - t_id: token unique id: starts at 1
 - sentence: sentence id: start at 0
 - number: t_id per sentence: start at 0. 
