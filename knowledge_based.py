@@ -187,12 +187,14 @@ def add_token(element,mask = True):
   return dataset
 
 def main():
+  dataset = []
   for e in data:
     sent1,sent2,event1,event2 = e['sentence1'],e['sentence2'],e['event1'],e['event2']
     sent = add_token(e)
     doc = e['document']
     label = 0 if e['relation'] == 'NULL' else 1
-  return [doc,sent1, sent2, event1,event2, sent, label]
+  dataset.append([doc,sent1, sent2, event1,event2, sent, label])
+  return dataset
 
 """## Eval"""
 
