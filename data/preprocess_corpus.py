@@ -168,6 +168,10 @@ if __name__ == '__main__':
                     'ducument':doc,
                     #'article':all_token # if we want to add the whole article the json file
                 }
+                e1_know,e2_know = linear_knowledge(data)
+                add1,add2 ="",""
+                if knowledge:
+                    add1,add2 = e1_know,e2_know
                 
                 # add event markers to the sentence
                 if data['sentence1_id'] == data['sentence2_id']:
@@ -178,10 +182,7 @@ if __name__ == '__main__':
                   sentence = temp.copy()
                   e1_id,e2_id = data['event1_id'],data['event2_id']
                   e1_id,e2_id = [int(i) for i in e1_id],[int(i) for i in e2_id]
-                  e1_know,e2_know = linear_knowledge(data)
-                  add1,add2 ="",""
-                  if knowledge:
-                    add1,add2 = e1_know,e2_know
+                  
                   
                   if e1_id[0] > e2_id[0]:
                     
