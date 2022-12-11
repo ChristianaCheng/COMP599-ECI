@@ -135,6 +135,13 @@ def extract_plotLink(etreeRoot, d):
             source_pl = elem.find('source').get('m_id', 'null')
             target_pl = elem.find('target').get('m_id', 'null')
             relvalu = elem.get('relType', 'null')
+            signal = elem.get("SIGNAL","")
+            causes = elem.get("CAUSES","")
+            caused_by = elem.get("CAUSED_BY","")
+            if signal:
+                print(source_pl,target_pl,signal,causes,caused_by)
+                global counter
+                counter += 1
 
             if source_pl in d:
                 val1 =  "_".join(d[source_pl])
@@ -269,7 +276,8 @@ def make_corpus(ecbtopic, ecbstartopic, evaluationtopic, evaluationcoreftopic, d
                 #     print(s_text, t_text, value)
 
 def main(argv=None):
-
+    global counter
+    counter = 0
     version = 'v0.9'
     
     ECBplusTopic = 'ECB+_LREC2014/ECB+/' 
@@ -283,7 +291,7 @@ def main(argv=None):
         if os.path.isdir(f'annotated_data/{version}/' + topic):
             dir1, dir2, dir3, dir4 = ECBplusTopic + topic, ECBstarTopic + topic, EvaluationTopic + topic, EvaluationCrofTopic + topic
             make_corpus(dir1, dir2, dir3, dir4, data_dict)
-
+    print(counter)
 
     with open(f'document_raw_{version}.pickle', 'wb') as f:
         pickle.dump(data_dict, f, pickle.HIGHEST_PROTOCOL)
