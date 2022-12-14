@@ -14,9 +14,7 @@
             6. document: the file path of the article that the events/sentences belong to<br>
             7. topic: the topic that the article belongs to. In total, there are 22 topics.<br>
             8. article: the article contains all information of the document, containing tuples of (word_id, sentence_id, word_id_in_the_sentence, word) for the whole article.<br></li>
-     <li> TODO: post-process(remove duplicates) </li>
      <br>
     <i>NOTE: The json files are too big to upload on github. Only an example was given (in zip format). Follow the instructions above locally can get the processed causal inter- and intra- sentential causal corpus.</i>
     
   </ul>
-<h2> Causal-Timebank </h2>
