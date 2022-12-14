@@ -1,4 +1,3 @@
 ECI
-- BiLSTM
-- Bert
-- T0
+- Bert-based: BERT, CausalBERT, KnowBERT
+- prompt-based: T0 3B and GPT-3
